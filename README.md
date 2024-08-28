@@ -6,6 +6,7 @@
 * sudo apt install php-mysql php-gd
 * Composer;
 
+
 ## Como rodar o projeto baixado
 
 ## Seqência para criar o projeto
