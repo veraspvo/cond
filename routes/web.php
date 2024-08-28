@@ -7,6 +7,12 @@ use App\Http\Controllers\DivisaoController;
 use App\Http\Controllers\SetorOrganizacaoMilitarController;
 use App\Http\Controllers\DocumentoDivisaoController;
 use App\Http\Controllers\ControleController;
+use App\Http\Controllers\Auth\LoginController;
+
+Route::get('login', [LoginController::class, 'redirectToKeycloak'])->name('login');
+Route::get('callback', [LoginController::class, 'handleKeycloakCallback'])->name('callback');
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+
 
 //Rotas Controles
 Route::get('/controles/search', [ControleController::class, 'search'])->name('controles.search');
@@ -55,3 +61,5 @@ Route::get('/', function () {
 //Route::get('/', function () {
 //    return view('welcome');
 //});
+
+
