@@ -9,6 +9,10 @@ use App\Http\Controllers\DocumentoDivisaoController;
 use App\Http\Controllers\ControleController;
 use App\Http\Controllers\Auth\LoginController;
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::get('login', [LoginController::class, 'redirectToKeycloak'])->name('login');
 Route::get('callback', [LoginController::class, 'handleKeycloakCallback'])->name('callback');
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
@@ -54,9 +58,7 @@ Route::get('/documentos', [DocumentoController::class, 'index'])->name('document
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 //Route::get('/', function () {
 //    return view('welcome');
